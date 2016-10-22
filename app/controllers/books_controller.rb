@@ -69,6 +69,6 @@ if @book.update(book_params)
 
 # Never trust parameters from the scary internet, only allow the white list through.
 	def book_params
-params.require(:book).permit(:title, :description, :length, :author, :style)
+params.require(:book).permit(:title, :description, :length, :author, :style, :image)
 	end
 	end
