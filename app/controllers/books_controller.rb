@@ -11,6 +11,8 @@ end
 # GET /books/1.json
 def show
 @reviews = Review.where(book_id: @book.id).order("created_at DESC")
+	@avg_review = @reviews.average(:rating)
+
 end
 
 # GET /books/new
