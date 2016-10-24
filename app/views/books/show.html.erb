@@ -6,13 +6,13 @@
 
 
 <div class="star-rating" data-score= <%=@avg_review%></div>
-	<em><%="#{@reviews.length} reviews"%></em>
+	<em><%="#{@reviews.length} notes"%></em>
 
 <div class="table-responsive">
 <table class="table">
 <tbody>
 <tr>
-<td><strong>Title:</strong></td>
+<td><strong>Titre:</strong></td>
 <td><%= @book.title %></td>
 </tr>
 <tr>
@@ -20,11 +20,11 @@
 <td><%= @book.description %></td>
 </tr>
 <tr>
-<td><strong>Book Length:</strong></td>
+<td><strong>Logueur:</strong></td>
 <td><%= @book.length%></td>
 </tr>
 <tr>
-<td><strong>Author:</strong></td>
+<td><strong>Auteur:</strong></td>
 <td><%= @book.author %></td>
 </tr>
 <tr>
@@ -33,15 +33,15 @@
 </tr>
 </tbody>
 </table>
-<%= link_to "Write a Review", new_book_review_path(@book) %>
+<%= link_to "Noter/Commenter", new_book_review_path(@book) %>
 </div>
 </div>
 <div class="col-md-7.col-md-offeset-1">
 <h1 class="review_title"><%= @book.title %></h1>
 <p><%= @book.description %></p>
 <% if@reviews.blank? %>
-	<h3> No reviews just yet, would you like to add the first !</h3>
-	<%= link_to "Write Review", new_book_review_path(@book), class:"btn btn-danger" %>
+	<h3> Pas encore de notes/commentaires, voulez vous ajoutez le/la premier/première ?</h3>
+	<%= link_to "Noter/Commenter", new_book_review_path(@book), class:"btn btn-danger" %>
 	<% else %>
 	<% @reviews.each do |review| %>
 	<div class="reviews">
@@ -55,8 +55,8 @@
 </div>
 </div>
 </div>
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to 'Editer', edit_book_path(@book) %> |
+<%= link_to 'Retour', books_path %>
 
 <script>
 $('.star-rating').raty({

@@ -9,6 +9,14 @@ end
 
 # GET /books/1
 # GET /books/1.json
+
+def search
+	if params[:search].present?
+		@books = Book.search(params[:search],limit:100)
+	else
+		@books = Book.all
+	end
+	end
 def show
 @reviews = Review.where(book_id: @book.id).order("created_at DESC")
 	@avg_review = @reviews.average(:rating)
