@@ -49,3 +49,6 @@ gem 'devise', '~> 3.4.0'
 gem 'paperclip', '~>4.2.0'
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'searchkick', '~> 0.8.3'
+gem 'capistrano'
+gem 'capistrano-ext'
+gem "heroku"
