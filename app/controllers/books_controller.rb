@@ -12,7 +12,7 @@ end
 
 def search
 	if params[:search].present?
-		@books = Book.search(params[:search],limit:100)
+		@books = Book.search(params[:search], limit:1000)
 	else
 		@books = Book.all
 	end
